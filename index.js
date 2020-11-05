@@ -5,10 +5,12 @@ const TelegramBot = require('node-telegram-bot-api');
 const token = process.env.BOT_TOKEN;
 const port = process.env.PORT || 8443;
 const host = process.env.HOST;
+const url = `https://dry-eyrie-81555.herokuapp.com:/{token}`;
 const config = {
   webHook: { port, host },
 };
 const bot = new TelegramBot(token, config);
+bot.setWebHook(url);
 
 // Matches "/echo [whatever]"
 bot.onText(/\/echo (.+)/, (msg, match) => {
