@@ -7,7 +7,6 @@ const port = process.env.PORT || 8443;
 const host = process.env.HOST;
 const config = {
   webHook: { port, host },
-  polling: true,
 };
 const bot = new TelegramBot(token, config);
 
