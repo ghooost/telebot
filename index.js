@@ -5,7 +5,7 @@ const TelegramBot = require('node-telegram-bot-api');
 const token = process.env.BOT_TOKEN;
 const port = process.env.PORT || 8443;
 const host = process.env.HOST;
-const url = `https://dry-eyrie-81555.herokuapp.com:/{token}`;
+const url = `https://dry-eyrie-81555.herokuapp.com:/${token}`;
 const config = {
   webHook: { port, host },
 };
@@ -14,6 +14,8 @@ bot.setWebHook(url);
 
 // Matches "/echo [whatever]"
 bot.onText(/\/echo (.+)/, (msg, match) => {
+  console.log(msg);
+
   // 'msg' is the received Message from Telegram
   // 'match' is the result of executing the regexp above on the text content
   // of the message
@@ -28,6 +30,7 @@ bot.onText(/\/echo (.+)/, (msg, match) => {
 // Listen for any kind of message. There are different kinds of
 // messages.
 bot.on('message', (msg) => {
+  console.log(msg);
   const chatId = msg.chat.id;
 
   // send a message to the chat acknowledging receipt of their message
