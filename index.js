@@ -1,10 +1,8 @@
-const express = require('express')
-const path = require('path')
-const PORT = process.env.PORT || 5000
+const Telegraf = require('telegraf');
+const app = new Telegraf('AAERlp20WuutaPY4rY66-bJXQmn6N2ZnX8E');
 
-express()
-  .use(express.static(path.join(__dirname, 'public')))
-  .set('views', path.join(__dirname, 'views'))
-  .set('view engine', 'ejs')
-  .get('/', (req, res) => res.render('pages/index'))
-  .listen(PORT, () => console.log(`Listening on ${ PORT }`))
+app.hears('hi', ctx => {
+  return ctx.reply('Hey!');
+});
+
+app.startPolling();

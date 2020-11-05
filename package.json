@@ -8,11 +8,13 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "node test.js"
+    "test": "node test.js",
+    "deploy": "git push heroku main"
   },
   "dependencies": {
     "ejs": "^2.5.6",
-    "express": "^4.15.2"
+    "express": "^4.15.2",
+    "telegraf": "^3.38.0"
   },
   "devDependencies": {
     "got": "^11.3.0",
