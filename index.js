@@ -1,8 +1,13 @@
+
 const Telegraf = require('telegraf');
-const app = new Telegraf('AAERlp20WuutaPY4rY66-bJXQmn6N2ZnX8E');
+const bot = new Telegraf('AAERlp20WuutaPY4rY66-bJXQmn6N2ZnX8E')
 
-app.hears('hi', ctx => {
-  return ctx.reply('Hey!');
-});
+bot.use(async (ctx, next) => {
+  const start = new Date()
+  await next()
+  const ms = new Date() - start
+  console.log('Response time: %sms', ms)
+})
 
-app.startPolling();
+bot.on('text', (ctx) => ctx.reply('Hello World'))
+bot.launch()
