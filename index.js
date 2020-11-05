@@ -19,5 +19,5 @@ bot.on('message', (msg) => {
   const chatId = msg.chat.id;
 
   // send a message to the chat acknowledging receipt of their message
-  bot.sendMessage(chatId, `Hello ${msg.from?.first_name}, I've received your message`);
+  bot.sendMessage(chatId, `Hello ${msg.from.first_name}, I've received your message`);
 });
