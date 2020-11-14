@@ -1,3 +1,7 @@
+Set
+heroku config:set BOT_TOKEN="your bot token"
+heroku config:set APP_ID="your heroku app id"
+
 # node-js-getting-started
 
 A barebones Node.js app using [Express 4](http://expressjs.com/).
