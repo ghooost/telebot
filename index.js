@@ -3,7 +3,7 @@ const TelegramBot = require('node-telegram-bot-api');
 
 // replace the value below with the Telegram token you receive from @BotFather
 const token = process.env.BOT_TOKEN;
-const port = heroku  || 8443;
+const port = process.env.PORT  || 8443;
 const host = process.env.HOST;
 const url = `https://dry-eyrie-81555.herokuapp.com:/${token}`;
 const config = {
