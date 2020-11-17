@@ -1,7 +1,7 @@
 {
   "name": "node-js-getting-started",
   "version": "0.3.0",
-  "description": "A sample Node.js app using Express 4",
+  "description": "Simple bot",
   "engines": {
     "node": "12.x"
   },
@@ -9,9 +9,13 @@
   "scripts": {
     "start": "node index.js",
     "test": "node test.js",
-    "deploy": "git push heroku main"
+    "deploy": "git push heroku main",
+    "commit": "git add .;git commit -m\"$npm_config_message\";npm run deploy",
+    "amend": "git add .;git commit --amend --no-edit;npm run deploy -- -f",
+    "logs": "heroku logs --tail"
   },
   "dependencies": {
+    "@nlpjs/basic": "^4.16.0",
     "ejs": "^2.5.6",
     "express": "^4.15.2",
     "node-telegram-bot-api": "^0.50.0",
